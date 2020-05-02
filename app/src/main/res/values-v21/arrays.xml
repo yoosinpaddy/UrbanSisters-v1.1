@@ -1,0 +1,15 @@
+<resources>
+
+    <string-array name="shop_id">
+        <item>--Select Shop--</item>
+        <item>Shop 1</item>
+        <item>Shop 2</item>
+        <item>Shop 3</item>
+        <item>Shop 4</item>
+        <item>Shop 5</item>
+    </string-array>
+
+
+
+
+</resources>

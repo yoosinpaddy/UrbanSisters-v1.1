@@ -1,0 +1,90 @@
+<resources>
+
+    <!-- Sign up -->
+    <string name="login">Ingia</string>
+    <string name="sign_up">Jisajili</string>
+    <string name="forgot_pass"><u>Umesahao nenosiri?</u></string>
+
+    <!-- Buttons-->
+    <string name="btn_submit">Tuma</string>
+    <string name="btn_sign_up">Jiandikishe</string>
+    <string name="register">Jisajili</string>
+
+
+    <!-- Modules -->
+    <string name="mod_login">Ingia</string>
+
+
+    <string name="user_panel">Huduma</string>
+
+
+    <!-- Nav drawer -->
+
+    <!-- Top left menu -->
+    <string name="action_settings">Mipangilio</string>
+    <string name="action_logout">Toka</string>
+
+    <!-- Text Hints -->
+    <string name="email">Barua pepe</string>
+    <string name="password">Nenosiri</string>
+    <string name="confirm_password">Thibitisha nenosiri</string>
+
+    <string name="server_not_responding">Seva haijibu, jaribu tena</string>
+
+    <string name="no_internet">Hakuna mtandao</string>
+    <string name="internet_required">"Uunganisho wa mtandao unahitajika! "</string>
+
+    <string name="process_dialog_title">Tafadhali subiri</string>
+
+    <string name="swahili_language">Kiswahili</string>
+    <string name="english_language">Kiingereza</string>
+    <string name="we_are_happy_to_see_u">Tunafurahi kukuona tena</string>
+    <string name="not_a_member">Hauna akaunti?</string>
+    <string name="user_details">Tujuane</string>
+    <string name="password_required">Nenosiri linahitajika</string>
+    <string name="wrong_password">Nenosiri sio sahihi</string>
+    <string name="password_did_not_match">Nenosiri halifanani</string>
+    <string name="welcome">Karibu</string>
+    <string name="btn_no">Hapana</string>
+    <string name="btn_yes">Ndio</string>
+    <string name="confirm">Thibitisha</string>
+    <string name="customize">Binafsisha</string>
+    <string name="good_morning">Habari za asubuhi</string>
+    <string name="good_afternoon">Mchana mzuri</string>
+    <string name="good_evening">Habari za jioni</string>
+    <string name="greeting_message">ungependa tukufanyie nini leo?</string>
+    <string name="personal_info">Maelezo ya kibinafsi</string>
+    <string name="app_name_desc">Dada wa mjini</string>
+    <string name="bill_amount">Kiwango cha fedha</string>
+    <string name="history">Historia</string>
+    <string name="email_address_required">Barua pepe linahitajika</string>
+    <string name="invalid_email_address">Anwani batili ya barua pepe</string>
+    <string name="add">Ongeza</string>
+    <string name="language">Chagua lugha unayopendelea</string>
+    <string name="changelang">Badilisha Lugha</string>
+    <string name="amount_required">" Kiasi cha fedha kinahitajika"</string>
+    <string name="accounts">Akaunti</string>
+    <string name="confirm_delete">" Je! Una uhakika unataka kufuta?"</string>
+    <string name="name">Jina</string>
+    <string name="name_required">Jina linahitajika</string>
+    <string name="password_characters">" Nenosiri lazima liwe angalau herufi 6"</string>
+    <string name="phone_required">" Nambari ya simu inahitajika"</string>
+    <string name="phone">Nambari ya simu</string>
+    <string name="hair_extension">Ugani wa nywele</string>
+    <string name="orders">Agizo</string>
+    <string name="mod_profile">Profaili</string>
+    <string name="update">"Sasisha "</string>
+    <string name="admin_panel">Jopo la Msimamizi</string>
+    <string name="registered_successfully">" Imesajiliwa kwa mafanikio"</string>
+    <string name="not_registered">Mtumiaji hajasajiliwa</string>
+    <string name="image_required">Picha linahitajika</string>
+    <string name="title_required">Jina linahitajika</string>
+    <string name="price_required">Bei inahitajika</string>
+    <string name="description_required">Maelezo yanahitajika</string>
+    <string name="uploaded_successfully">Imetumwa kwa mafanikio</string>
+    <string name="buy">Nunua</string>
+    <string name="complete_order">Kamilisha Agizo</string>
+    <string name="no_products_available">" Bidhaa hazipatikani"</string>
+    <string name="no_order_placed">" Haujaweka agizo lolote"</string>
+
+</resources>

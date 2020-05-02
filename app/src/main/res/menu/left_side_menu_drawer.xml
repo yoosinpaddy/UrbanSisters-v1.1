@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_hair_extension"
+            android:title="@string/hair_extension"
+            android:icon="@drawable/ic_shop" />
+
+        <item
+            android:id="@+id/menu_orders"
+            android:title="@string/orders"
+            android:icon="@drawable/ic_orders" />
+
+        <item
+            android:id="@+id/menu_admin"
+            android:title="@string/admin_panel"
+            android:icon="@drawable/ic_user" />
+
+    </group>
+
+
+    <item android:title="@string/customize">
+        <menu>
+            <item
+                android:id="@+id/menu_change_language"
+                android:icon="@drawable/ic_lang"
+                android:title="@string/changelang" />
+
+            <item
+                android:id="@+id/menu_profile"
+                android:icon="@drawable/ic_user"
+                android:title="@string/mod_profile" />
+
+        <item
+            android:id="@+id/menu_logout"
+            android:icon="@drawable/ic_locked"
+            android:title="@string/action_logout" />
+        </menu>
+    </item>
+
+</menu>
