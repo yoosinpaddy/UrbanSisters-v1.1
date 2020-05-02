@@ -160,24 +160,28 @@ public class Utils {
     }
 
     public void registerFCMReceiver(){
+
         FIREBASE_NOTIFICATION_RECEIVER = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
 
                 // checking for type intent filter
-                if (intent.getAction().equals(REGISTRATION_COMPLETE)) {
-                    // gcm successfully registered
-                    // now subscribe to `global` topic to receive app wide notifications
-                    FirebaseMessaging.getInstance().subscribeToTopic(FIREBASE_NOTIFICATION_TOPIC_GLOBAL);
-                    getDeviceFcmID();
+                if (intent.getAction()!=null){
+                    if (intent.getAction().equals(REGISTRATION_COMPLETE)) {
+                        // gcm successfully registered
+                        // now subscribe to `global` topic to receive app wide notifications
+                        FirebaseMessaging.getInstance().subscribeToTopic(FIREBASE_NOTIFICATION_TOPIC_GLOBAL);
+                        getDeviceFcmID();
 
-                } else if (intent.getAction().equals(PUSH_NOTIFICATION)) {
+                    } else if (intent.getAction().equals(PUSH_NOTIFICATION)) {
                     /*String title = intent.getStringExtra(NOTIFICATION_TITLE);
                     String message = intent.getStringExtra(NOTIFICATION_MESSAGE);
                     int dialog_type = Integer.parseInt(intent.getStringExtra(NOTIFICATION_DIALOG_TYPE));
 
                     NotificationUtils.createNotification(appContext.getApplicationContext(), message);
                     showFeedbackSweetDialog(title, message, dialog_type, null);*/
+                    }
+
                 }
             }
         };

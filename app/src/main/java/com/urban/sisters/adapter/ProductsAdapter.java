@@ -34,12 +34,12 @@ public abstract class ProductsAdapter extends RecyclerView.Adapter {
 
     private int NO_DATA_VIEW = 1;
     private int SHOP_VIEW = 2;
-    private int ORDER_VIEW = 2;
+    private int ORDER_VIEW = 3;
     private Context context;
     private ArrayList<Object> dataArray;
 
     private StorageReference imageStorage;
-
+    private static final String TAG = "ProductsAdapter";
 
     public ProductsAdapter(Context context, ArrayList<Object> itemsArray) {
         this.context = context;
@@ -51,26 +51,28 @@ public abstract class ProductsAdapter extends RecyclerView.Adapter {
 
         if (dataArray.get(position) instanceof ProductsModel) {
             return SHOP_VIEW;
+        }if (dataArray.get(position) instanceof OrdersModel) {
+            return ORDER_VIEW;
         }
 
         return NO_DATA_VIEW;
     }
 
+    @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         RecyclerView.ViewHolder viewHolder = null;
-
-        if (viewType == NO_DATA_VIEW) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_no_data_recycler, parent, false);
-            viewHolder = new EmptyHolder(view);
-        }
-        else if (viewType == SHOP_VIEW) {
+        Log.e(TAG, "onCreateViewHolder: "+viewType );
+        if (viewType == SHOP_VIEW) {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_products_recyclyer, parent, false);
             viewHolder = new ShopHolder(view);
         }
         else if (viewType == ORDER_VIEW) {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_orders_recycler, parent, false);
             viewHolder = new OrdersHolder(view);
+        }else{
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_no_data_recycler, parent, false);
+            viewHolder = new EmptyHolder(view);
         }
 
         return viewHolder;
@@ -85,6 +87,7 @@ public abstract class ProductsAdapter extends RecyclerView.Adapter {
 
             final OrdersHolder ordersHolder = (OrdersHolder) holder;
             OrdersModel ordersData = (OrdersModel) dataArray.get(position);
+            Log.e(TAG, "onCreateViewHolder: OrdersHolder"+ordersData.getTitle() );
             ordersHolder.sku.setText("sku "+ordersData.getSku());
             ordersHolder.title.setText(ordersData.getTitle());
             ordersHolder.price.setText("Ksh "+ordersData.getPrice());
@@ -108,6 +111,7 @@ public abstract class ProductsAdapter extends RecyclerView.Adapter {
 
         }
         else if (holder instanceof ShopHolder) {
+            Log.e(TAG, "onCreateViewHolder: ShopHolder" );
 
             final ShopHolder shopHolder = (ShopHolder) holder;
             ProductsModel productData = (ProductsModel) dataArray.get(position);
@@ -140,10 +144,17 @@ public abstract class ProductsAdapter extends RecyclerView.Adapter {
                         }
                     });
         }
-        else {
-            EmptyHolder emptyHolder = (EmptyHolder) holder;
+        else if (holder instanceof EmptyHolder){
+            Log.e(TAG, "onCreateViewHolder: EmptyHolder" );
+            /*EmptyHolder emptyHolder = (EmptyHolder) holder;
             EmptyModel emptyModel = (EmptyModel) dataArray.get(position);
-            emptyHolder.message.setText(emptyModel.getMessage());
+            emptyHolder.message.setText(emptyModel.getMessage());*/
+        }
+        else {
+            Log.e(TAG, "onCreateViewHolder: other" );
+//            EmptyHolder emptyHolder = (EmptyHolder) holder;
+//            EmptyModel emptyModel = (EmptyModel) dataArray.get(position);
+//            emptyHolder.message.setText(emptyModel.getMessage());
         }
     }
 
@@ -154,20 +165,20 @@ public abstract class ProductsAdapter extends RecyclerView.Adapter {
 
     public abstract void selectedItem(int position);
 
-    protected class EmptyHolder extends RecyclerView.ViewHolder {
+    protected static class EmptyHolder extends RecyclerView.ViewHolder {
         private TextView message;
 
-        public EmptyHolder(View view) {
+        EmptyHolder(View view) {
             super(view);
             message = view.findViewById(R.id.message);
         }
     }
 
-    protected class OrdersHolder extends RecyclerView.ViewHolder {
+    protected static class OrdersHolder extends RecyclerView.ViewHolder {
         private TextView title, sku, date, price;
         private Button completeOrder;
 
-        public OrdersHolder(View view) {
+        OrdersHolder(View view) {
             super(view);
 
             title = view.findViewById(R.id.title);
@@ -185,6 +196,24 @@ public abstract class ProductsAdapter extends RecyclerView.Adapter {
         private Button buy;
 
         public ShopHolder(View view) {
+            super(view);
+
+            image = view.findViewById(R.id.image);
+            sku = view.findViewById(R.id.sku);
+            title = view.findViewById(R.id.title);
+            description = view.findViewById(R.id.description);
+            price = view.findViewById(R.id.price);
+            rating = view.findViewById(R.id.rating);
+            buy = view.findViewById(R.id.buy);
+        }
+    }
+    protected class OrderHolder extends RecyclerView.ViewHolder {
+        private ImageView image;
+        private TextView sku, title, description, price;
+        private RatingBar rating;
+        private Button buy;
+
+        public OrderHolder(View view) {
             super(view);
 
             image = view.findViewById(R.id.image);

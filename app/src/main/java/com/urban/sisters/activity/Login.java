@@ -374,22 +374,22 @@ public class Login extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        // register GCM registration complete receiver
-        LocalBroadcastManager.getInstance(this).registerReceiver(FIREBASE_NOTIFICATION_RECEIVER,
-                new IntentFilter(REGISTRATION_COMPLETE));
-
-        // register new push message receiver
-        // by doing this, the activity will be notified each time a new message arrives
-        LocalBroadcastManager.getInstance(this).registerReceiver(FIREBASE_NOTIFICATION_RECEIVER,
-                new IntentFilter(PUSH_NOTIFICATION));
-
-        // clear the notification area when the app is opened
-        NotificationUtils.clearNotifications(getApplicationContext());
+//        // register GCM registration complete receiver
+//        LocalBroadcastManager.getInstance(this).registerReceiver(FIREBASE_NOTIFICATION_RECEIVER,
+//                new IntentFilter(REGISTRATION_COMPLETE));
+//
+//        // register new push message receiver
+//        // by doing this, the activity will be notified each time a new message arrives
+//        LocalBroadcastManager.getInstance(this).registerReceiver(FIREBASE_NOTIFICATION_RECEIVER,
+//                new IntentFilter(PUSH_NOTIFICATION));
+//
+//        // clear the notification area when the app is opened
+//        NotificationUtils.clearNotifications(getApplicationContext());
     }
 
     @Override
     protected void onPause() {
-        LocalBroadcastManager.getInstance(this).unregisterReceiver(FIREBASE_NOTIFICATION_RECEIVER);
+//        LocalBroadcastManager.getInstance(this).unregisterReceiver(FIREBASE_NOTIFICATION_RECEIVER);
         super.onPause();
     }
 

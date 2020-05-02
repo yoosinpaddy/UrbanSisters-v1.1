@@ -91,7 +91,6 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
         mAuth = FirebaseAuth.getInstance();
         dbTblProducts = FirebaseDatabase.getInstance().getReference().child(FIREBASE_DB_TBL_PRODUCTS);
         dbTblOrder = FirebaseDatabase.getInstance().getReference().child(FIREBASE_DB_TBL_ORDERS);
-        utils.registerFCMReceiver();
     }
 
     @Override
@@ -257,6 +256,7 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
     protected void onResume() {
         super.onResume();
 
+        /*utils.registerFCMReceiver();
         // register GCM registration complete receiver
         LocalBroadcastManager.getInstance(this).registerReceiver(FIREBASE_NOTIFICATION_RECEIVER,
                 new IntentFilter(REGISTRATION_COMPLETE));
@@ -267,12 +267,12 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
                 new IntentFilter(PUSH_NOTIFICATION));
 
         // clear the notification area when the app is opened
-        NotificationUtils.clearNotifications(getApplicationContext());
+        NotificationUtils.clearNotifications(getApplicationContext());*/
     }
 
     @Override
     protected void onPause() {
-        LocalBroadcastManager.getInstance(this).unregisterReceiver(FIREBASE_NOTIFICATION_RECEIVER);
+//        LocalBroadcastManager.getInstance(this).unregisterReceiver(FIREBASE_NOTIFICATION_RECEIVER);
         super.onPause();
     }
 

@@ -1,42 +1,92 @@
 {
   "project_info": {
-    "project_number": "649330307635",
-    "firebase_url": "https://urban-sisters.firebaseio.com",
-    "project_id": "urban-sisters",
-    "storage_bucket": "urban-sisters.appspot.com"
+    "project_number": "209056916101",
+    "firebase_url": "https://twourbansisters.firebaseio.com",
+    "project_id": "twourbansisters",
+    "storage_bucket": "twourbansisters.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:649330307635:android:151a6fe2f595022a79e946",
+        "mobilesdk_app_id": "1:209056916101:android:9629862260190ee2cf7fec",
         "android_client_info": {
           "package_name": "com.urban.sisters"
         }
       },
       "oauth_client": [
         {
-          "client_id": "649330307635-ari0sgpc74f2ko70snggol3ee5sftlt3.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.urban.sisters",
-            "certificate_hash": "0d26396e2c006e32f54b42dd84b82df32d766e35"
-          }
-        },
-        {
-          "client_id": "649330307635-0j21sdoumt4vkfoat36tsg1nbfk7fp04.apps.googleusercontent.com",
+          "client_id": "209056916101-gmie7adah2faqfet1q2u77tbok22f7ke.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAN_FH-yUok8M62B0uLy4IoQEfGpAtqu6w"
+          "current_key": "AIzaSyCJSx3F4lCMV6Fp9oj5uT3iOC-vIcRi4Ww"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "649330307635-0j21sdoumt4vkfoat36tsg1nbfk7fp04.apps.googleusercontent.com",
+              "client_id": "209056916101-gmie7adah2faqfet1q2u77tbok22f7ke.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209056916101:android:9d47a49217222da7cf7fec",
+        "android_client_info": {
+          "package_name": "com.yoosin.customer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "209056916101-gmie7adah2faqfet1q2u77tbok22f7ke.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJSx3F4lCMV6Fp9oj5uT3iOC-vIcRi4Ww"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "209056916101-gmie7adah2faqfet1q2u77tbok22f7ke.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209056916101:android:966dbb919273829acf7fec",
+        "android_client_info": {
+          "package_name": "com.yoosin.customer.fypproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "209056916101-gmie7adah2faqfet1q2u77tbok22f7ke.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJSx3F4lCMV6Fp9oj5uT3iOC-vIcRi4Ww"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "209056916101-gmie7adah2faqfet1q2u77tbok22f7ke.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

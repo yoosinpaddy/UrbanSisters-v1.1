@@ -64,6 +64,7 @@ public class Orders extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<Object> orderList = new ArrayList<>();
     Utils utils;
+    private static final String TAG = "Orders";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,27 +94,32 @@ public class Orders extends AppCompatActivity {
                     //loop through the kids
 
                     for (DataSnapshot childSnapShot : children) {
-                        String userId = childSnapShot.child(FIREBASE_DB_TBL_PRODUCTS_COLUMN_POSTED_BY).getValue().toString();
+                        Log.e(TAG, "onDataChange: "+childSnapShot.toString() );
+                        if (childSnapShot.child(FIREBASE_DB_TBL_PRODUCTS_COLUMN_POSTED_BY).getValue()!=null){
+                            String userId = childSnapShot.child(FIREBASE_DB_TBL_PRODUCTS_COLUMN_POSTED_BY).getValue().toString();
 
-                        OrdersModel oModel = childSnapShot.getValue(OrdersModel.class);
-                        oModel.setRowId(childSnapShot.getKey());
-                        oModel.setSku(childSnapShot.child(FIREBASE_DB_TBL_PRODUCTS_COLUMN_SKU).getValue().toString());
-                        oModel.setTitle(childSnapShot.child(FIREBASE_DB_TBL_PRODUCTS_COLUMN_TITLE).getValue().toString());
-                        oModel.setPrice(childSnapShot.child(FIREBASE_DB_TBL_PRODUCTS_COLUMN_PRICE).getValue().toString());
-                        oModel.setOrderDate(childSnapShot.child(FIREBASE_DB_TBL_ORDERS_COLUMN_DATE).getValue().toString());
-                        oModel.setOrderStatus(childSnapShot.child(FIREBASE_DB_TBL_ORDERS_COLUMN_STATUS).getValue().toString());
+                            OrdersModel oModel = childSnapShot.getValue(OrdersModel.class);
+                            oModel.setRowId(childSnapShot.getKey());
+                            oModel.setSku(childSnapShot.child(FIREBASE_DB_TBL_PRODUCTS_COLUMN_SKU).getValue().toString());
+                            oModel.setTitle(childSnapShot.child(FIREBASE_DB_TBL_PRODUCTS_COLUMN_TITLE).getValue().toString());
+                            oModel.setPrice(childSnapShot.child(FIREBASE_DB_TBL_PRODUCTS_COLUMN_PRICE).getValue().toString());
+                            oModel.setOrderDate(childSnapShot.child(FIREBASE_DB_TBL_ORDERS_COLUMN_DATE).getValue().toString());
+                            oModel.setOrderStatus(childSnapShot.child(FIREBASE_DB_TBL_ORDERS_COLUMN_STATUS).getValue().toString());
 
-                        if (mCurrentUser.getUid().equals(userId) && utils.getUserLevel().equals("customer")) {
-                            orderList.add(oModel);
-                        } else if (utils.getUserLevel().equals("admin")) {
-                            orderList.add(oModel);
+                            if (mCurrentUser.getUid().equals(userId) && utils.getUserLevel().equals("customer")) {
+                                orderList.add(oModel);
+                            } else if (utils.getUserLevel().equals("admin")) {
+                                orderList.add(oModel);
+                            }
+
                         }
                     }
+
                 }
                 else{
-                    EmptyModel emptyModel = new EmptyModel();
+                    /*EmptyModel emptyModel = new EmptyModel();
                     emptyModel.setMessage(utils.getStringResource(R.string.no_order_placed));
-                    orderList.add(emptyModel);
+                    orderList.add(emptyModel);*/
                 }
 
 
@@ -129,6 +135,7 @@ public class Orders extends AppCompatActivity {
                     }
                 };
                 recyclerView.setAdapter(ordersAdapter);
+                ordersAdapter.notifyDataSetChanged();
             }
 
             @Override
